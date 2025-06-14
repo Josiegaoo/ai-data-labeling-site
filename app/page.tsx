@@ -20,21 +20,38 @@ export default function Home() {
   const { language } = useContext(LanguageContext);
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-8 relative z-10">
-      {/* Futuristic SVG/Illustration */}
+      {/* Futuristic, Spider-Verse-inspired SVG Illustration */}
       <div className="mb-8">
-        <svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="160" cy="160" r="120" fill="url(#paint0_radial)" />
-          <circle cx="160" cy="160" r="100" fill="url(#paint1_radial)" opacity="0.7" />
+        <svg width="340" height="340" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientTransform="translate(160 160) rotate(90) scale(120)" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#a855f7" />
-              <stop offset="1" stopColor="#0ea5e9" />
+            <radialGradient id="spiderverse1" cx="0.5" cy="0.5" r="0.7">
+              <stop offset="0%" stopColor="#f472b6" />
+              <stop offset="100%" stopColor="#0ea5e9" />
             </radialGradient>
-            <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientTransform="translate(160 160) rotate(90) scale(100)" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#f472b6" />
-              <stop offset="1" stopColor="#0a0026" />
+            <radialGradient id="spiderverse2" cx="0.5" cy="0.5" r="0.8">
+              <stop offset="0%" stopColor="#a855f7" />
+              <stop offset="100%" stopColor="#0a0026" />
             </radialGradient>
+            <linearGradient id="spiderverse3" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#38bdf8" />
+              <stop offset="100%" stopColor="#f472b6" />
+            </linearGradient>
           </defs>
+          {/* Main cosmic orb */}
+          <ellipse cx="170" cy="170" rx="120" ry="120" fill="url(#spiderverse1)" opacity="0.85" />
+          {/* Overlayed orbits */}
+          <ellipse cx="170" cy="170" rx="100" ry="40" fill="none" stroke="url(#spiderverse3)" strokeWidth="6" opacity="0.7" />
+          <ellipse cx="170" cy="170" rx="60" ry="120" fill="none" stroke="#f472b6" strokeWidth="3" opacity="0.3" />
+          <ellipse cx="170" cy="170" rx="90" ry="90" fill="none" stroke="#38bdf8" strokeWidth="2" opacity="0.4" />
+          {/* Spider-Verse style dots */}
+          <circle cx="110" cy="110" r="8" fill="#f472b6" opacity="0.8" />
+          <circle cx="230" cy="80" r="5" fill="#38bdf8" opacity="0.7" />
+          <circle cx="250" cy="200" r="7" fill="#a855f7" opacity="0.7" />
+          <circle cx="80" cy="220" r="4" fill="#f472b6" opacity="0.6" />
+          <circle cx="200" cy="260" r="6" fill="#38bdf8" opacity="0.7" />
+          {/* Central glowing core */}
+          <circle cx="170" cy="170" r="32" fill="url(#spiderverse2)" opacity="0.95" />
+          <circle cx="170" cy="170" r="18" fill="#fff" opacity="0.12" />
         </svg>
       </div>
       <div className="flex space-x-8 mb-8 z-10">
