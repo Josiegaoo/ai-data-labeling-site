@@ -146,7 +146,7 @@ export default function IndustryTrends() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-8 relative z-10">
-      {/* Spider-Verse-inspired SVG Illustration */}
+      {/* Spider-Verse-inspired SVG Illustration with more bubbles */}
       <div className="mb-8">
         <svg width="220" height="220" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -164,6 +164,11 @@ export default function IndustryTrends() {
           <circle cx="70" cy="70" r="6" fill="#f472b6" opacity="0.7" />
           <circle cx="150" cy="60" r="4" fill="#38bdf8" opacity="0.7" />
           <circle cx="170" cy="140" r="5" fill="#a855f7" opacity="0.7" />
+          {/* More bubbles */}
+          <circle cx="90" cy="180" r="7" fill="#38bdf8" opacity="0.6" />
+          <circle cx="130" cy="170" r="5" fill="#f472b6" opacity="0.5" />
+          <circle cx="180" cy="100" r="8" fill="#a855f7" opacity="0.5" />
+          <circle cx="120" cy="130" r="4" fill="#0ea5e9" opacity="0.6" />
         </svg>
       </div>
       <ArrowTrendingUpIcon className="h-16 w-16 text-purple-500 mb-4 drop-shadow-lg" />
@@ -184,14 +189,14 @@ export default function IndustryTrends() {
               style={{ minHeight: 320, height: 320 }}
             >
               <button
-                className="w-full h-full flex flex-col justify-center items-center px-4 py-2 font-semibold text-lg focus:outline-none bg-transparent"
+                className="w-full h-full flex flex-col justify-center items-center px-4 py-2 font-semibold text-lg focus:outline-none bg-transparent text-black"
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
               >
                 <Icon className={`h-10 w-10 mb-2 ${trend.iconColor}`} />
                 {trend.title[language]}
               </button>
               {openIndex === idx && (
-                <div className="bg-white/90 rounded-b-xl px-6 py-6 border-t border-purple-200 mt-2">
+                <div className="bg-white/90 rounded-b-xl px-6 py-6 border-t border-purple-200 mt-2 text-black">
                   <p className="mb-2"><span className="font-bold">{language === 'en' ? 'Overview:' : '概述：'}</span> {trend.overview[language]}</p>
                   <p><span className="font-bold">{language === 'en' ? 'Impact:' : '影响：'}</span> {trend.impact[language]}</p>
                 </div>
