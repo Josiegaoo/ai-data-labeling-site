@@ -1,6 +1,9 @@
+import Navbar from "./components/Navbar";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "./language-context";
+import LanguageSwitcher from "./components/LanguageSwitcher";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +27,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={geistSans.className}>
+        <LanguageProvider>
+          <div className="flex flex-col w-full">
+            <div className="w-full flex flex-row items-center justify-center" style={{marginBottom: 0}}>
+              <div className="flex-1 flex justify-center">
+                <Navbar />
+              </div>
+              <div className="pr-8 mt-0">
+                <LanguageSwitcher />
+              </div>
+            </div>
+            <div className="flex-1">{children}</div>
+          </div>
+        </LanguageProvider>
       </body>
     </html>
   );
