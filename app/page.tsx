@@ -65,7 +65,6 @@ export default function Home() {
       <p className="text-xl text-center mb-8 text-purple-100 max-w-2xl drop-shadow">
         {content[language].desc}
       </p>
-      <a href="#" className="neon-btn mt-2">{content[language].cta}</a>
     </main>
   );
 }
