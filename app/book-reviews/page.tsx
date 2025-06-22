@@ -2,7 +2,7 @@
 
 import { useState, useContext } from "react";
 import { LanguageContext } from '../language-context';
-import { BookOpenIcon, StarIcon, UserIcon, CalendarIcon, TagIcon, EyeIcon, HeartIcon, ChatBubbleLeftIcon } from '@heroicons/react/24/solid';
+import { BookOpenIcon, StarIcon, UserIcon, CalendarIcon, EyeIcon, HeartIcon } from '@heroicons/react/24/solid';
 
 const bookReviews = [
   {
