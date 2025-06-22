@@ -21,11 +21,29 @@
 
 body {
   min-height: 100vh;
-  background: radial-gradient(ellipse at 60% 40%, #2d006e 0%, #0a0026 100%);
+  /* Futuristic purple gradient wallpaper */
+  background: linear-gradient(135deg, #6d28d9 0%, #a21caf 40%, #9333ea 70%, #0ea5e9 100%);
   color: var(--foreground);
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   position: relative;
   overflow-x: hidden;
+}
+
+/* Animated gradient overlay for extra futuristic effect */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(120deg, rgba(168,85,247,0.12) 0%, rgba(236,72,153,0.10) 50%, rgba(14,165,233,0.10) 100%);
+  mix-blend-mode: lighten;
+  animation: wallpaper-move 16s linear infinite alternate;
+}
+
+@keyframes wallpaper-move {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 /* Starfield effect */
@@ -43,4 +61,19 @@ body::before {
 .neon-btn {
   @apply bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition hover:brightness-125;
   box-shadow: 0 0 16px 2px #a855f7, 0 0 32px 4px #38bdf8;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

@@ -8,12 +8,14 @@ const navLabels = {
     home: "Home",
     blogs: "Blogs",
     trends: "Industry Trends",
+    bookReviews: "Book Reviews",
     contact: "Contact & Collaboration"
   },
   zh: {
     home: "首页",
     blogs: "博客",
     trends: "行业趋势",
+    bookReviews: "书籍评论",
     contact: "联系与合作"
   }
 };
@@ -31,6 +33,9 @@ export default function Navbar() {
         </li>
         <li>
           <Link href="/industry-trends" className="font-semibold hover:text-blue-600">{navLabels[language].trends}</Link>
+        </li>
+        <li>
+          <Link href="/book-reviews" className="font-semibold hover:text-blue-600">{navLabels[language].bookReviews}</Link>
         </li>
         <li>
           <Link href="/contact" className="font-semibold hover:text-blue-600">{navLabels[language].contact}</Link>

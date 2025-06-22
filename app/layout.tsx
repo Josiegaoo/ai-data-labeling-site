@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={geistSans.className}>
         <LanguageProvider>
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col w-full min-h-screen flex-1">
             <div className="w-full flex flex-row items-center justify-center" style={{marginBottom: 0}}>
               <div className="flex-1 flex justify-center">
                 <Navbar />
@@ -34,7 +34,7 @@ export default function RootLayout({
                 <LanguageSwitcher />
               </div>
             </div>
-            <div className="flex-1">{children}</div>
+            <div className="flex-1 flex flex-col">{children}</div>
           </div>
         </LanguageProvider>
       </body>
