@@ -21,40 +21,28 @@
 
 body {
   min-height: 100vh;
-  /* Futuristic purple gradient wallpaper */
-  background: linear-gradient(135deg, #6d28d9 0%, #a21caf 40%, #9333ea 70%, #0ea5e9 100%);
+  /* Soft pastel yellow → pink gradient like the reference image */
+  background:
+    linear-gradient(120deg, #fff7c2 0%, #ffd6e8 50%, #f9c0ff 100%);
   color: var(--foreground);
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   position: relative;
   overflow-x: hidden;
 }
 
-/* Animated gradient overlay for extra futuristic effect */
 body::after {
   content: '';
   position: fixed;
   top: 0; left: 0; width: 100vw; height: 100vh;
   pointer-events: none;
   z-index: 1;
-  background: linear-gradient(120deg, rgba(168,85,247,0.12) 0%, rgba(236,72,153,0.10) 50%, rgba(14,165,233,0.10) 100%);
-  mix-blend-mode: lighten;
-  animation: wallpaper-move 16s linear infinite alternate;
+  background: transparent;
+  animation: wallpaper-move 18s linear infinite alternate;
 }
 
 @keyframes wallpaper-move {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
-}
-
-/* Starfield effect */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0; left: 0; width: 100vw; height: 100vh;
-  pointer-events: none;
-  z-index: 0;
-  background: url('https://www.transparenttextures.com/patterns/stardust.png');
-  opacity: 0.25;
+  0% { transform: translate3d(-5%, -5%, 0); }
+  100% { transform: translate3d(5%, 5%, 0); }
 }
 
 /* Neon button utility */
