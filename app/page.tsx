@@ -13,12 +13,24 @@ export default function Home() {
             Coyyebo
           </span>
         </p>
-        <div className="rounded-3xl bg-white/80 p-4 shadow-lg">
+        <div className="rounded-3xl bg-white/80 p-5 shadow-lg">
           <img
             src="/wechat-qr-coyyebo.png"
             alt="WeChat QR code for Coyyebo"
-            className="h-72 w-72 object-contain"
+            className="h-80 w-80 object-contain"
           />
+        </div>
+        <div className="mt-6 flex flex-col items-center gap-3">
+          <p className="text-sm md:text-base text-slate-700">
+            These are a few of the worlds I&apos;ve been wandering through lately — if you&apos;re a fellow book lover, let&apos;s connect and swap ideas!
+          </p>
+          <div className="rounded-3xl bg-white/80 p-6 shadow-lg inline-block">
+            <img
+              src="/bookshelf-favs.png"
+              alt="Some of Josie's favourite books"
+              className="h-[30rem] w-auto object-contain rounded-2xl"
+            />
+          </div>
         </div>
       </div>
     </main>
