@@ -1,92 +1,28 @@
 "use client";
-import { useContext } from 'react';
-import { LanguageContext } from './language-context';
-
-const content = {
-  en: {
-    title: 'Welcome to AI Data Labeling Insights',
-    desc: 'Explore blogs, industry trends, book reviews, and collaborate with us!',
-    cta: 'Get Started'
-  },
-  zh: {
-    title: '欢迎来到AI数据标注洞察',
-    desc: '探索博客、行业趋势、书籍评论，与我们合作！',
-    cta: '立即开始'
-  }
-};
 
 export default function Home() {
-  const { language } = useContext(LanguageContext);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-8 relative z-10">
-      {/* Futuristic VR wallpaper background from Freepik */}
-      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-        <img
-          src="https://img.freepik.com/premium-photo/person-using-vr-ar-googles_941097-220016.jpg"
-          alt="Futuristic VR"
-          className="w-full h-full object-cover object-center animate-vr-glow"
-          style={{
-            filter: 'brightness(0.85) saturate(1.2) blur(0.5px)',
-            mixBlendMode: 'screen',
-            opacity: 0.7,
-          }}
-          aria-hidden="true"
-        />
-        {/* Overlay gradient for color harmony */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(120deg, rgba(109,40,217,0.55) 0%, rgba(14,165,233,0.35) 100%)',
-            zIndex: 1,
-          }}
-        />
-        <style jsx>{`
-          .animate-vr-glow {
-            animation: vr-glow-pulse 3.2s ease-in-out infinite;
-          }
-          @keyframes vr-glow-pulse {
-            0%, 100% {
-              filter: brightness(0.85) saturate(1.2) blur(0.5px) drop-shadow(0 0 24px #a855f7);
-            }
-            50% {
-              filter: brightness(1.05) saturate(1.4) blur(0.5px) drop-shadow(0 0 48px #38bdf8);
-            }
-          }
-        `}</style>
-      </div>
-      <div className="flex flex-col items-start justify-start absolute top-0 left-0 mt-16 ml-16 z-20 max-w-xl">
-        {/* Animated bubble */}
-        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" className="mb-4 animated-bubble">
-          <circle cx="32" cy="32" r="28" fill="url(#bubbleGradient)" opacity="0.85" />
-          <defs>
-            <radialGradient id="bubbleGradient" cx="0.5" cy="0.5" r="0.7">
-              <stop offset="0%" stopColor="#a855f7" />
-              <stop offset="100%" stopColor="#38bdf8" />
-            </radialGradient>
-          </defs>
-        </svg>
-        <style jsx>{`
-          .animated-bubble {
-            animation: bubble-pulse 2.4s ease-in-out infinite;
-          }
-          @keyframes bubble-pulse {
-            0%, 100% {
-              transform: scale(1);
-              opacity: 0.85;
-            }
-            50% {
-              transform: scale(1.12);
-              opacity: 1;
-            }
-          }
-        `}</style>
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 drop-shadow-lg text-left">
-          {content[language].title}
-        </h1>
-        <p className="text-xl text-left mb-0 text-purple-100 max-w-2xl drop-shadow">
-          {content[language].desc}
-        </p>
-      </div>
+    <main className="flex min-h-screen w-full flex-col items-center justify-center px-6 py-16 text-center text-slate-900">
+      <h1 className="text-4xl md:text-6xl font-extrabold tracking-wide mb-6 bg-gradient-to-r from-pink-500 via-orange-400 to-yellow-400 bg-clip-text text-transparent drop-shadow-[0_6px_18px_rgba(248,113,113,0.35)]">
+        Welcome to Josie&apos;s World!
+      </h1>
+      <p className="text-lg md:text-xl text-slate-700 mb-10 max-w-xl">
+        A small corner of the internet where I collect what I&apos;m reading, learning, and curious about.
+      </p>
+      <a
+        href="https://weread.qq.com/web/shelf"
+        target="_blank"
+        rel="noreferrer"
+        className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-pink-500 to-orange-400 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-pink-400/40 transition hover:scale-[1.03]"
+      >
+        Visit my WeRead bookshelf
+      </a>
+      <p className="mt-6 text-sm md:text-base text-slate-700">
+        Or add me on <span className="font-semibold text-emerald-700">WeChat</span>:
+        <span className="ml-2 inline-flex items-center rounded-full border border-emerald-300 bg-emerald-50 px-3 py-1 text-xs md:text-sm font-semibold text-emerald-800">
+          Coyyebo
+        </span>
+      </p>
     </main>
   );
 }
