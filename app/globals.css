@@ -1,67 +1,50 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0026;
-  --foreground: #ededed;
+  --background: #FDFBF7;
+  --foreground: #333333;
 }
 
-@theme inline {
+/* Tailwind CSS v4 theme variables */
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   min-height: 100vh;
-  /* Soft pastel yellow → pink gradient like the reference image */
-  background:
-    linear-gradient(120deg, #fff7c2 0%, #ffd6e8 50%, #f9c0ff 100%);
+  background: linear-gradient(to bottom, #FFE5CC, #FFD6E8, #FFF7C2);
+  background-attachment: fixed;
   color: var(--foreground);
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
   position: relative;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-body::after {
-  content: '';
-  position: fixed;
-  top: 0; left: 0; width: 100vw; height: 100vh;
-  pointer-events: none;
-  z-index: 1;
-  background: transparent;
-  animation: wallpaper-move 18s linear infinite alternate;
+/* Waving emoji animation */
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
 }
 
-@keyframes wallpaper-move {
-  0% { transform: translate3d(-5%, -5%, 0); }
-  100% { transform: translate3d(5%, 5%, 0); }
+.animate-wave {
+  animation: wave 1s ease-in-out infinite;
+  display: inline-block;
+  transform-origin: 70% 70%;
 }
 
-/* Neon button utility */
-.neon-btn {
-  @apply bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition hover:brightness-125;
-  box-shadow: 0 0 16px 2px #a855f7, 0 0 32px 4px #38bdf8;
-}
-
-/* Line clamp utilities */
-.line-clamp-2 {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
 }

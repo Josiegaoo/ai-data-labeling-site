@@ -5,18 +5,12 @@ import { LanguageContext } from "../language-context";
 
 const navLabels = {
   en: {
-    home: "Home",
-    blogs: "Blogs",
-    trends: "Industry Trends",
-    bookReviews: "Book Reviews",
-    contact: "Contact & Collaboration"
+    site: "about-josie",
+    contact: "Contact"
   },
   zh: {
-    home: "首页",
-    blogs: "博客",
-    trends: "行业趋势",
-    bookReviews: "书籍评论",
-    contact: "联系与合作"
+    site: "about-josie",
+    contact: "联系我"
   }
 };
 
@@ -26,19 +20,14 @@ export default function Navbar() {
     <nav className="w-full flex justify-center py-6">
       <ul className="flex space-x-8">
         <li>
-          <Link href="/" className="font-semibold hover:text-blue-600">{navLabels[language].home}</Link>
+          <Link href="/" className="text-lg font-semibold tracking-wide text-white hover:text-sky-300 transition">
+            {navLabels[language].site}
+          </Link>
         </li>
         <li>
-          <Link href="/blogs" className="font-semibold hover:text-blue-600">{navLabels[language].blogs}</Link>
-        </li>
-        <li>
-          <Link href="/industry-trends" className="font-semibold hover:text-blue-600">{navLabels[language].trends}</Link>
-        </li>
-        <li>
-          <Link href="/book-reviews" className="font-semibold hover:text-blue-600">{navLabels[language].bookReviews}</Link>
-        </li>
-        <li>
-          <Link href="/contact" className="font-semibold hover:text-blue-600">{navLabels[language].contact}</Link>
+          <Link href="#contact" className="font-semibold text-white/80 hover:text-sky-200 transition">
+            {navLabels[language].contact}
+          </Link>
         </li>
       </ul>
     </nav>
