@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function Home() {
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-center px-6 py-16 text-center text-slate-900">
@@ -14,10 +16,12 @@ export default function Home() {
           </span>
         </p>
         <div className="rounded-3xl bg-white/80 p-5 shadow-lg">
-          <img
+          <Image
             src="/wechat-qr-coyyebo.png"
             alt="WeChat QR code for Coyyebo"
-            className="h-80 w-80 object-contain"
+            width={320}
+            height={320}
+            className="object-contain"
           />
         </div>
         <div className="mt-6 flex flex-col items-center gap-3">
@@ -25,10 +29,12 @@ export default function Home() {
             These are a few of the worlds I&apos;ve been wandering through lately — if you&apos;re a fellow book lover, let&apos;s connect and swap ideas!
           </p>
           <div className="rounded-3xl bg-white/80 p-6 shadow-lg inline-block">
-            <img
+            <Image
               src="/bookshelf-favs.png"
               alt="Some of Josie's favourite books"
-              className="h-[30rem] w-auto object-contain rounded-2xl"
+              width={480}
+              height={600}
+              className="w-auto h-[30rem] object-contain rounded-2xl"
             />
           </div>
         </div>

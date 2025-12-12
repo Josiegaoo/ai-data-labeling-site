@@ -42,7 +42,7 @@ export default function Portfolio() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    alert("Thank you for your message! I'll get back to you soon.");
+    alert("Thank you for your message! I&apos;ll get back to you soon.");
     setFormData({ name: "", email: "", message: "" });
   };
 
@@ -126,7 +126,7 @@ export default function Portfolio() {
                 <p className="text-gray-700 mb-6 leading-relaxed text-lg">
                   For three years, I worked in workflow management and
                   operations in Shanghai. Driven by curiosity and a desire to
-                  broaden my horizons, I pursued my Master's degree and later spent a year
+                  broaden my horizons, I pursued my Master&apos;s degree and later spent a year
                   in London as an industry research expert. I look back with
                   gratitude for every challenge and transition, and I look
                   forward with the same courage that brought me here.
